@@ -1,6 +1,7 @@
 # from lessons import create_counter
 # from lesson_2 import timer, printing
-from lesson_3 import exclamation_marks, dots, question_marks, shorten_words, yield_items
+from lesson_3 import (dots, exclamation_marks, question_marks, shorten_words,
+                      yield_items)
 
 if __name__ == "__main__":
     """ 1.

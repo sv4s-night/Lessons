@@ -8,8 +8,9 @@ import time
 
 def check_integers(func):
     """Декоратор проверяющий целые числа"""
-
     def wrapper(*args, **kwargs):
+
+
         result = func(*args, **kwargs)
         """проверка на тип с использованием type()"""
 
