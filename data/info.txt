@@ -1,0 +1,18 @@
+    cur_dir = os.getcwd()   # путь до директории                                    D:\10_Share\02_Programming\Python\Lessons\src
+    cur_list = os.listdir() # список файлов в данной директории                     ['lessons.py', 'lesson_12_1_10.py']
+
+    file = "file.txt"
+    cur_join = os.path.join(cur_dir, file)  # Совмещает два указанных пути          D:\10_Share\02_Programming\Python\Lessons\src\file.txt
+
+
+    path = r"D:\10_Share\02_Programming\Python\Lessons\src\file.txt"
+    print(os.path.dirname(path))    # Возвращает имя директории из указанного пути  D:\10_Share\02_Programming\Python\Lessons\src
+
+    print(os.path.join(os.path.dirname(__file__), r"data\lesson_12_1_15.json"))     D:\Lessons\src\file.txt
+
+
+    sys.path.insert(1,pat os.path.join(sys.h[0], "../../data"))                     # через родительскую папку
+     line_to_file = os.path.join(os.path.dirname(__file__), "/path/")
+
+
+
