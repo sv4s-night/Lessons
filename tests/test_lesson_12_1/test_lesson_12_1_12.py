@@ -1,4 +1,4 @@
-from src.lesson_12_1_12 import add_week_to_dates, event_durations
+from src.Lesson_12_1.lesson_12_1_12 import add_week_to_dates, event_durations
 
 
 def test_add_week_to_dates():

@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 from dotenv import load_dotenv
 
-from src.lesson_12_1_7 import get_weather
+from src.Lesson_12_1.lesson_12_1_7 import get_weather
 
 # Загрузка переменных из .env-файла
 load_dotenv(".env") \

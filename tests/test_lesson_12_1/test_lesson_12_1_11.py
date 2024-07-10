@@ -1,7 +1,7 @@
 import json
 import pytest
 from unittest.mock import patch
-from src.lesson_12_1_11 import get_user_info, get_user_repos, get_github_users, get_currency_rate
+from src.Lesson_12_1.lesson_12_1_11 import get_user_info, get_user_repos, get_github_users, get_currency_rate
 
 """Тесты 1 Задание"""
 

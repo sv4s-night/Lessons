@@ -77,8 +77,8 @@ def filter_transactions_by_currency(input_file, output_file, currency):
 
 
 def main():
-    input_file = r"transactions.json"  # если в другой директории, то надо указать путь
-    output_file = "transactions_filtered.json"
+    input_file = r"../transactions.json"  # если в другой директории, то надо указать путь
+    output_file = "../transactions_filtered.json"
     currency = "USD"
 
     filtered_transactions = filter_transactions_by_currency(
