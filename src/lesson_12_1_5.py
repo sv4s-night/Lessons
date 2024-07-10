@@ -15,7 +15,9 @@ city — город из списка cities.
 """
 
 
-def generate_users(first_name: list[str], last_name: list[str], cities: list[str]) -> dict:
+def generate_users(
+    first_name: list[str], last_name: list[str], cities: list[str]
+) -> dict:
     """Функция генерирующая пользователя"""
 
     while True:
@@ -23,10 +25,9 @@ def generate_users(first_name: list[str], last_name: list[str], cities: list[str
             "first_name": random.choice(first_name),
             "second_name": random.choice(last_name),
             "age": random.randint(18, 65),
-            "city": random.choice(cities)
+            "city": random.choice(cities),
         }
         yield user
-
 
 
 """Задача 2
@@ -42,11 +43,17 @@ def generate_users(first_name: list[str], last_name: list[str], cities: list[str
 
 def stat_decorator(func):
     """Декоратор для вывода статистики по отфильтрованным транзакциям"""
+
     def wrapper(*args, **kwargs):
         filtered_transactions = func(*args, **kwargs)
-        total_amount = sum([transaction['amount'] for transaction in filtered_transactions])
-        print(f"Отфильтровано {len(filtered_transactions)} транзакций на сумму {total_amount}")
+        total_amount = sum(
+            [transaction["amount"] for transaction in filtered_transactions]
+        )
+        print(
+            f"Отфильтровано {len(filtered_transactions)} транзакций на сумму {total_amount}"
+        )
         return filtered_transactions
+
     return wrapper
 
 
@@ -57,7 +64,11 @@ def filter_transactions_by_currency(input_file, output_file, currency):
     with open(input_file, "r") as file:
         transactions = json.load(file)
 
-    filtered_transactions = [transaction for transaction in transactions if transaction["currency"] == currency]
+    filtered_transactions = [
+        transaction
+        for transaction in transactions
+        if transaction["currency"] == currency
+    ]
 
     with open(output_file, "w") as file:
         json.dump(filtered_transactions, file, indent=4)
@@ -66,13 +77,14 @@ def filter_transactions_by_currency(input_file, output_file, currency):
 
 
 def main():
-    input_file = r"transactions.json"                    # если в другой директории, то надо указать путь
+    input_file = r"transactions.json"  # если в другой директории, то надо указать путь
     output_file = "transactions_filtered.json"
     currency = "USD"
 
-    filtered_transactions = filter_transactions_by_currency(input_file, output_file, currency)
+    filtered_transactions = filter_transactions_by_currency(
+        input_file, output_file, currency
+    )
     print(filtered_transactions)
-
 
 
 if __name__ == "__main__":
@@ -91,8 +103,6 @@ if __name__ == "__main__":
     print(json.dumps(user_group_1, indent=4))
     print("Users group #2:")
     print(json.dumps(user_group_2, indent=4))
-
-
 
     """2 Задача"""
     main()

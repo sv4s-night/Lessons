@@ -8,8 +8,8 @@ import time
 
 def check_integers(func):
     """Декоратор проверяющий целые числа"""
-    def wrapper(*args, **kwargs):
 
+    def wrapper(*args, **kwargs):
 
         result = func(*args, **kwargs)
         """проверка на тип с использованием type()"""
@@ -76,21 +76,26 @@ def shorten_words(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
 
-        words = result.split()                          # разбиваем строку на список элементов
-        short_words = []                                # создаем список куда будем вносить наш результат
+        words = result.split()  # разбиваем строку на список элементов
+        short_words = []  # создаем список куда будем вносить наш результат
 
-        for word in words:                              # проверяем каждый элемент
+        for word in words:  # проверяем каждый элемент
 
-            if len(word) > 8:                           # если элемент больше 8 символов
-                shortened_word = word[:8] + "."         # в переменную записываем его укороченный вариант с точкой
-                short_words.append(shortened_word)      # добавляем слова в новый список
+            if len(word) > 8:  # если элемент больше 8 символов
+                shortened_word = (
+                    word[:8] + "."
+                )  # в переменную записываем его укороченный вариант с точкой
+                short_words.append(shortened_word)  # добавляем слова в новый список
 
-            else:                                       # если слово меньше 8 символов, вносим в список
+            else:  # если слово меньше 8 символов, вносим в список
                 short_words.append(word)
 
-        return " ".join(short_words)                  # список с результатами объединяем в строку с разделителем пробел
+        return " ".join(
+            short_words
+        )  # список с результатами объединяем в строку с разделителем пробел
 
     return wrapper
+
 
 # Решение в одну строку через Генератор
 # return " ".join(f"{word[:8]}." if len(word) > 8 else word for word in result.split())
@@ -109,20 +114,21 @@ def exclamation_marks(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         return result.replace("!", "!!!")
-    return wrapper
 
+    return wrapper
 
 
 def question_marks(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        return result.replace('?', '???')
-    return wrapper
+        return result.replace("?", "???")
 
+    return wrapper
 
 
 def dots(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        return result.replace('.', '...')
+        return result.replace(".", "...")
+
     return wrapper
