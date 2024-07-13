@@ -1,6 +1,6 @@
 import pytest
 
-from src.lesson_12_1_5 import generate_users
+from src.Lesson_12_1.lesson_12_1_5 import generate_users
 
 
 @pytest.fixture
