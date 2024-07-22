@@ -1,0 +1,35 @@
+{
+    "total_counter": 5,
+    "domains": {
+        "gmail.com": {
+            "count": 1,
+            "emails": [
+                "example@gmail.com"
+            ]
+        },
+        "example.com": {
+            "count": 1,
+            "emails": [
+                "mail@example.com"
+            ]
+        },
+        "mail.ru": {
+            "count": 1,
+            "emails": [
+                "test@mail.ru"
+            ]
+        },
+        "yandex.ru": {
+            "count": 1,
+            "emails": [
+                "user@yandex.ru"
+            ]
+        },
+        "domain.com": {
+            "count": 1,
+            "emails": [
+                "admin@domain.com"
+            ]
+        }
+    }
+}
