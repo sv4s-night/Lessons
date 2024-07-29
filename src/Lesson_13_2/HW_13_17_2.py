@@ -18,12 +18,15 @@ def main() -> str:
 3. Получить информацию о транзакциях из XLSX-файла"""
     input_user_file = input(f"{greeting}\n")
 
+
+
+
+
     while input_user_file not in ["1", "2", "3"]:
         print("\nВвели некорректный символ\nПопробуйте еще раз:")
         input_user_file = input()
 
     else:
-
         if input_user_file == "1":
             print("\nДля обработки выбран JSON-файл.")
             result = get_operations("/Users/maksbolomoznov/PycharmProjects/pythonProjectHw/data/operations.json")
@@ -44,7 +47,6 @@ def main() -> str:
         input_user_state = input().upper()
 
     else:
-
         if input_user_state == "EXECUTED":
             print('\nОперации отфильтрованы по статусу "EXECUTED"')
         elif input_user_state == "CANCELED":
@@ -53,6 +55,10 @@ def main() -> str:
             print('\nОперации отфильтрованы по статусу "PENDING"')
 
     result = filter_by_state(result, input_user_state)
+
+
+
+
 
     next_choice_data = """\nОтсортировать операции по дате? Да/Нет"""
     input_user_data = input(f"{next_choice_data}\n").lower()
@@ -78,6 +84,10 @@ def main() -> str:
                 elif input_user_ascending == "по возрастанию":
                     result = sort_by_date(result, False)
 
+
+
+
+
     next_choice_rub = """\nВыводить только рублевые тразакции? Да/Нет"""
     input_user_rub = input(f"{next_choice_rub}\n").lower()
     while input_user_rub not in ["да", "нет"]:
@@ -85,9 +95,11 @@ def main() -> str:
         input_user_rub = input(f"{next_choice_rub}\n").lower()
 
     else:
-
         if input_user_rub == "да":
             result = filter_by_currency(result, "RUB")
+
+
+
 
     next_choice_word = """\nОтфильтровать список транзакций по определенному слову в описании? Да/Нет"""
     input_user_word = input(f"{next_choice_word}\n").lower()
@@ -101,9 +113,11 @@ def main() -> str:
             if input_user_rub == "да":
                 list_result = [r for r in [*result]]
                 result = search_transactions([*result], word_filter)
-
             else:
                 result = search_transactions(result, word_filter)
+
+
+
 
     print("Распечатываю итоговый список транзакций...\n")
     print(f"Всего банковских операций в выборке: {len(result)}")
