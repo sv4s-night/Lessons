@@ -39,3 +39,30 @@
 """
 
 
+import datetime
+
+
+class Task:
+    name: str
+    descriptions: str
+    status: str
+    created_at: str
+
+    def __init__(self, name, descriptions, status="Ожидает старта", created_at=None):
+                                                                    # self - ссылка на экземпляр класса
+        self.name = name
+        self.descriptions = descriptions                            # descriptions - описание
+        self.status = status
+        self.created_at = created_at if created_at else datetime.date.today().strftime("%d.%m.%Y")
+        # created_at - дата создания (применяем библиотеку datetime) .strtime() - переводит из даты в строку
+                                                                    # .date.today() - подставляет сегодняшную дату
+
+
+
+
+
+
+if __name__ == "__main__":
+
+
+

@@ -1,0 +1,40 @@
+[
+  {
+    "username": "alex",
+    "email": "alex@gmail.com",
+    "first_name": "Alex",
+    "last_name": "Tomas",
+    "task_list": [
+      {
+        "name": "Купить батон",
+        "description": "Купить батон когда будешь в магазине",
+        "created_at": "01.02.2024"
+      },
+      {
+        "name": "Поиграть с собакой",
+        "description": "Взять собаку и поехать к озеру поиграть и погулять",
+        "status": "Выполнено",
+        "created_at": "13.02.2024"
+      },
+      {
+        "name": "Встретиться с друзьями",
+        "description": "Забронировать ресторан на 15.02 на встречу с 5 друзьями",
+        "status": "Выполнено",
+        "created_at": "15.02.2024"
+      }
+    ]
+  },
+  {
+    "username": "john",
+    "email": "john@gmail.com",
+    "first_name": "John",
+    "last_name": "Borg",
+    "task_list": [
+      {
+        "name": "Сдать сессию",
+        "description": "Сдать все экзамены до 15.02",
+        "created_at": "01.02.2024"
+      }
+    ]
+  }
+]
